@@ -1,0 +1,301 @@
+@media only screen and (min-width: 600px){
+    @font-face {
+        font-family: SFProDisplay; /* Гарнитура шрифта */
+        src: url(fonts/SFProDisplay-Regular.ttf); /* Путь к файлу со шрифтом */
+       }
+body{
+    color: rgb(80, 80, 80);
+    margin: 0;
+    font-family: SFProDisplay, 'Comic Sans MS', cursive;
+    cursor: url(cur/Arrow.cur), default;
+    
+}
+.logo{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: 25px;
+    margin-top: 18px;
+    cursor: url(cur/Hand.cur), pointer;
+}
+h1{
+    position: absolute;
+    margin-left: 80px;
+    font-weight: normal;
+    
+}
+.head1{
+    padding-bottom: 80px;
+}
+.head2{
+    background-color: rgb(250, 250, 250);
+    border: 1px solid  rgb(212, 212, 212);
+    height: 70px;
+    box-shadow: inset 0 -2px 0 rgba(100,100,100,0.1);
+}
+.bicon{
+    width: 25px;
+    height: 25px;
+    float:left;
+}
+button{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+button:focus{
+    outline: none;
+}
+.lbutton{
+    color: darkorchid;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border: 1px solid rgb(212, 212, 212);
+    width: 150px;
+    height: 40px;
+    cursor: url(cur/Hand.cur), pointer;
+}
+.lbutton:hover{
+    color: white;
+    background-color: darkorchid;
+    border: 1px solid darkorchid;
+    transition: 0.5s;
+}
+.rbutton{
+    font-size: 20px;
+    color: rgb(80, 80, 80);
+    margin-top: 15px;
+    float:right;
+    margin-right: 20px;
+    border: 1px solid rgb(212, 212, 212);
+    width: 150px;
+    height: 40px;
+    cursor: url(cur/Hand.cur), pointer;
+}
+
+.rbutton:hover{
+    color: white;
+    background-color: rgb(112, 112, 112);
+    border: 1px solid rgb(112, 112, 112);
+    transition: 0.5s;
+}
+
+.changebutton{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    margin-left: 49%;
+    margin-top: 20px;
+    cursor: url(cur/Hand.cur), pointer;
+}
+.untg{
+    position: absolute;
+    float:left;
+    margin-left: 20%;
+    font-weight: normal;
+    color: darkorchid;
+}
+.tg{
+    float: right;
+    margin-right: 18%;
+    font-weight: normal;
+}
+.body1{
+    padding-bottom: 70px;
+}
+.leftarea{
+    cursor: url(cur/IBeam.cur), text;
+    position: absolute;
+    width: 50%;
+    padding-bottom: 10%;
+    resize: none;
+    font-family: SFProDisplay, 'Comic Sans MS', cursive;
+    font-weight: normal;
+    font-size: 25px;
+    padding-right: 0.5%;
+    border: 1px solid rgb(212, 212, 212);
+    border-top: 3px solid darkorchid;
+    box-shadow: 0 3px 0 rgba(50,50,50,0.1);
+}
+.leftarea:focus{
+    outline: 1px solid darkorchid;
+}
+.rightarea{
+    cursor: url(cur/IBeam.cur), text;
+    width: 48.5%;
+    padding-bottom: 10.12%;
+    background-color: rgb(242, 242, 242);
+    float: right;
+    font-weight: normal;
+    resize: none;
+    font-family: SFProDisplay, 'Comic Sans MS', cursive;
+    font-size: 25px;
+    padding-left: 0.5%;
+    border: 1px solid rgb(212, 212, 212);
+    box-shadow: 0 3px 0 rgba(50,50,50,0.1);
+}
+.hintright{
+    text-decoration: none;
+    font-size: 15px;
+    float: right;
+    margin-top: 200px;
+    margin-right: -48%;
+    cursor: url(cur/Hand.cur), pointer;
+ }
+.hint{
+   position: fixed;
+   margin-top: 200px;
+   margin-left: 10px;
+   display: block;
+}
+
+
+}
+
+@media only screen and (max-width: 600px){
+    @font-face {
+        font-family: SFProDisplay; /* Гарнитура шрифта */
+        src: url(fonts/SFProDisplay-Regular.ttf); /* Путь к файлу со шрифтом */
+       }
+    body{
+        color: rgb(80, 80, 80);
+        margin: 0;
+        font-family: SFProDisplay, 'Comic Sans MS', cursive;
+        cursor: url(cur/Arrow.cur), default;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        display: block;
+        margin-top:2%;
+        cursor: url(cur/Hand.cur), pointer;
+    }
+    h1{
+        display: none;
+    }
+    .head1{
+        padding-bottom: 5px;
+    }
+    .head2{
+        height: 40px;
+        padding-bottom: 20px;
+    }
+    button{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    button:focus{
+        outline: none;
+    }
+    .lbutton{
+        color: darkorchid;
+        font-size: 4.2vw;
+        margin-top: 15px;
+        margin-left: 20px;
+        border: 1px solid rgb(212, 212, 212);
+        width: 30%;
+        height: 40px;
+        cursor: url(cur/Hand.cur), pointer;
+    }
+    .lbutton:hover{
+        color: white;
+        background-color: darkorchid;
+        border: 1px solid darkorchid;
+        transition: 0.5s;
+    }
+    .rbutton{
+        font-size: 4.2vw;
+        color: rgb(80, 80, 80);
+        margin-top: 15px;
+        float:right;
+        margin-right: 20px;
+        border: 1px solid rgb(212, 212, 212);
+        width: 30%;
+        height: 40px;
+        cursor: url(cur/Hand.cur), pointer;
+    }
+    
+    .rbutton:hover{
+        color: white;
+        background-color: rgb(112, 112, 112);
+        border: 1px solid rgb(112, 112, 112);
+        transition: 0.5s;
+    }
+    
+    .changebutton{
+        margin: 0 auto;
+        display: block;
+        margin-top: 3%;
+        width: 45px;
+        height: 45px;
+        cursor: url(cur/Hand.cur), pointer;
+    }
+    .untg{
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+        font-weight: normal;
+        color: rgb(80, 80, 80);
+        font-size: 4.2vw;
+    }
+    .tg{
+        font-size: 141%;
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 40%;
+        display: none;
+        text-align: center;
+        font-weight: normal;
+        
+    }
+    .body1{
+        padding-bottom: 20px;
+    }
+    .leftarea{
+        cursor: url(cur/IBeam.cur), text;
+        width: 90%;
+        padding-bottom: 15%;
+        resize: none;
+        font-family: SFProDisplay, 'Comic Sans MS', cursive;
+        font-size: 4.2vw;
+        background-color: rgb(252, 252, 252);
+        border: 1px solid rgb(212, 212, 212);
+        border-radius: 10px;
+        margin: 0 auto;
+        display: block;
+    }
+    .leftarea:focus{
+        outline: none;
+    }
+    .rightarea{
+        cursor: url(cur/IBeam.cur), text;
+        width: 90%;
+        padding-bottom: 15%;
+        font-family: SFProDisplay, 'Comic Sans MS', cursive;
+        resize: none;
+        background-color: rgb(232, 232, 232);
+        font-size: 4.2vw;
+        border: 1px solid rgb(212, 212, 212);
+        margin: 0 auto;
+        display: block;
+        margin-top: 5%;
+        border-radius: 10px;
+    }
+    .hintright{
+        display:none;
+        text-decoration: none;
+        font-size: 15px;
+        float: right;
+        margin-top: 18%;
+        margin-right: -48%;
+        cursor: url(cur/Hand.cur), pointer;
+     }
+    .hint{
+       margin-left: 5%;
+       font-size: 3vw;
+       padding-bottom: 10%;
+    }
+}
