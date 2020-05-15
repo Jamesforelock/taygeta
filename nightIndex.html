@@ -6,22 +6,18 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/mainnight.css'>
     <link rel="shortcut icon" href="images/favicon.png"/>
-    <script async src="scripts/main.js"></script>
     <script>
     function moveRect(e){
-        switch(e.keyCode){
-             
+        switch(e.keyCode){     
             case 113:  // если нажата клавиша F2
                 toClipBoard('one', 'two');
                 break;
             case 27:   // если нажата клавиша ESC
             document.location.href = "nightIndex-e.html";
-                break;
-        }
+            break;
+      }
     }
-
     addEventListener("keyup", moveRect);
-    
     </script>
 </head>
 <body>
@@ -64,5 +60,6 @@
         input.focus();
       </script>
       <div style="padding-bottom: 33%"></div>
+      <script async src="scripts/main.js"></script>
 </body>
 </html>

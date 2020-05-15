@@ -188,5 +188,4 @@ function moveRect(e){
     
     }
 }
-
  addEventListener("keyup", moveRect); // Добавление прослушивания нажатия клавиши F8
