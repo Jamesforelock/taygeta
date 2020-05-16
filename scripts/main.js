@@ -1,6 +1,12 @@
 "use strict";
 var userString; // Пользовательская строка
 var resultString; // Результирующая строка
+var isToCrypt = 0;
+var isDark = localStorage.getItem('isDark');
+
+if(isDark == 1){
+    $('link[href="styles/main.css"]').attr('href', 'styles/mainnight.css');
+}
 
 //======================= МАССИВЫ СИМВОЛОВ ==========================
 // Массив символов латиницы и соответствующий ему массив замены
@@ -111,6 +117,7 @@ function Uncrypt(){
             break;
         case key4:
             SymbolChange(userString[i+1], cryptedArr4, notCryptedArr4, '');
+            break;
         }
     document.getElementById('uncrypted').innerHTML = resultString; // Запись значения в текстовое поле
     }
@@ -118,22 +125,7 @@ function Uncrypt(){
 
 // Функция копирования зашифрованного сообщения в буфер обмена
 function toClipBoard(){
-    var string = document.getElementById('crypted').value;
-    var suc = document.getElementById("audiosuccesful");
-    var unsuc = document.getElementById("audiounsuccesful");
-    navigator.clipboard.writeText(string)
-  .then(() => {
-        suc.play();
-  })
-  .catch(err => {
-        unsuc.play();
-    console.log('Something went wrong', err);
-  });
-}
-
-// Функция копирования незашифрованного сообщения в буфер обмена
-function toClipBoard2(){
-    var string = document.getElementById('uncrypted').value;
+    var string = document.getElementsByClassName('rightarea')[0].value;
     var suc = document.getElementById("audiosuccesful");
     var unsuc = document.getElementById("audiounsuccesful");
     navigator.clipboard.writeText(string)
@@ -173,6 +165,7 @@ function chKeys(){
         move = document.getElementById('key').innerHTML;
     }
     else{
+        Reset();
         SpliceArrays(move);
         localStorage.setItem('local', move); 
         document.getElementById('key').innerHTML = move;
@@ -189,3 +182,36 @@ function moveRect(e){
     }
 }
  addEventListener("keyup", moveRect); // Добавление прослушивания нажатия клавиши F8
+
+// ИЗМЕНЕНИЯ ОТ 16.05.2020
+function changeTheme(){ // Функция смены цветовой темы интерфейса
+    if(localStorage.getItem('isDark') == 0){
+        $('link[href="styles/main.css"]').attr('href', 'styles/mainnight.css');
+        localStorage.setItem('isDark', 1); 
+    }
+    else{
+        $('link[href="styles/mainnight.css"]').attr('href', 'styles/main.css');
+        localStorage.setItem('isDark', 0); 
+    }
+}
+
+function swapAreas(){
+    if(isToCrypt == 0){
+        document.getElementById('crypted').innerHTML = "";
+        $(".areaTitle1").html("Encrypted text");
+        $(".areaTitle2").html("Plain text");
+        $(".leftarea").attr({"oninput":"Uncrypt()", "id":"crypted"});
+        $(".rightarea").attr({"id":"uncrypted"});
+        $(".leftarea").val("");
+        isToCrypt = 1;
+    }
+    else{
+        document.getElementById('uncrypted').innerHTML = "";
+        $(".areaTitle1").html("Plain text");
+        $(".areaTitle2").html("Encrypted text");
+        $(".leftarea").attr({"oninput":"Crypt()", "id":"uncrypted"});
+        $(".rightarea").attr({"id":"crypted"});
+        $(".leftarea").val("");
+        isToCrypt = 0;
+    }
+}

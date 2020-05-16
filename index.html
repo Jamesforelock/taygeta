@@ -6,7 +6,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <link rel="shortcut icon" href="images/favicon.png"/>
-
     <script>
     function moveRect(e){
         switch(e.keyCode){   
@@ -14,7 +13,7 @@
                 toClipBoard('one', 'two');
                 break;
             case 27:   // если нажата клавиша ESC
-            document.location.href = "index-e.html";
+            swapAreas();
             break;
         }
     }
@@ -26,7 +25,7 @@
 <body>
     <header>
         <div class="head1">
-            <a href="nightIndex.html"><img src="images\logo.png" class="logo"></a>
+            <img id="logo" src="images\logo.png" class="logo" onclick="changeTheme()">
             <h1 class="name">Taygeta</h1>
         </div>
         <div class="head2">
@@ -40,19 +39,17 @@
     </header>
     <div>
         <div class="body1">
-            <h2 class="untg">Plain text</h2>
-            <a href="index-e.html" id="change"><img src="images\change.png" class="changebutton"></a>
-            <h2 class="tg">Encrypted text</h2>
+            <h2 class="areaTitle1">Plain text</h2>
+            <img src="images\change.png" class="changebutton" onclick="swapAreas()">
+            <h2 class="areaTitle2">Encrypted text</h2>
         </div>
         <form class="body2">
             <textarea class="leftarea" id="uncrypted" oninput="Crypt()"></textarea>
-            <textarea placeholder="Translation" disabled="disabled" class="rightarea"  id="crypted"></textarea>
+            <textarea placeholder="Translation" disabled="disabled" class="rightarea" id="crypted"></textarea>
         </form>
 
     </div>
-      <audio id="audiosuccesful" src="sounds\beep01.wav"></audio>
-
-      
+      <audio id="audiosuccesful" src="sounds\beep01.mp3"></audio>
       <a class = "hintright" href="https://vk.com/jamesforelock" target="_blank">Write to the developer</a>
       <span class = "hint">F2 - Copy, ESC - Invert, F8 - Keys</span>
       <br>
@@ -60,13 +57,14 @@
       <br>
       <span class = "hint" id = 'key'> </span>
       <br>
-      <span class = "hint">Version: 1.2</span>
+      <span class = "hint">Version: 2.0</span>
 
       <script>
         var input = document.getElementById('uncrypted');
         input.focus();
       </script>
       <div style="padding-bottom: 33%"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
       <script async src="scripts/main.js"></script>
 </body>
 </html>

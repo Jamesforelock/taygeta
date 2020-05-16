@@ -17,6 +17,7 @@ body{
     margin-left: 25px;
     margin-top: 18px;
     cursor: url(cur/Hand.cur), pointer;
+    border: none;
 }
 h1{
     position: absolute;
@@ -53,7 +54,7 @@ button:focus{
     font-size: 20px;
     margin-top: 15px;
     margin-left: 20px;
-    border: 1px solid  rgb(30,34,37);
+    border: 1px solid  rgb(212, 212, 212);
     width: 150px;
     height: 40px;
     cursor: url(cur/Hand.cur), pointer;
@@ -70,7 +71,7 @@ button:focus{
     margin-top: 15px;
     float:right;
     margin-right: 20px;
-    border: 1px solid  rgb(30,34,37);
+    border: 1px solid  rgb(212, 212, 212);
     width: 150px;
     height: 40px;
     cursor: url(cur/Hand.cur), pointer;
@@ -91,14 +92,14 @@ button:focus{
     margin-top: 20px;
     cursor: url(cur/Hand.cur), pointer;
 }
-.untg{
+.areaTitle1{
     position: absolute;
     float:left;
     margin-left: 20%;
     font-weight: normal;
     color: rgb(186, 115, 221);
 }
-.tg{
+.areaTitle2{
     float: right;
     margin-right: 18%;
     font-weight: normal;
@@ -176,6 +177,7 @@ button:focus{
         display: block;
         margin-top:2%;
         cursor: url(cur/Hand.cur), pointer;
+        border: none;
     }
     h1{
         display: none; 
@@ -218,7 +220,7 @@ button:focus{
         margin-top: 15px;
         float:right;
         margin-right: 20px;
-        border: 1px solid rgb(30,34,37);
+        border: 1px solid rgb(212, 212, 212);
         width: 30%;
         height: 40px;
         cursor: url(cur/Hand.cur), pointer;
@@ -239,7 +241,7 @@ button:focus{
         height: 45px;
         cursor: url(cur/Hand.cur), pointer;
     }
-    .untg{
+    .areaTitle1{
         margin: 0 auto;
         text-align: center;
         display: block;
@@ -247,7 +249,7 @@ button:focus{
         color: rgb(186, 115, 221);
         font-size: 4.2vw;
     }
-    .tg{
+    .areaTitle2{
         font-size: 141%;
         margin: 0 auto;
         padding: 0;
