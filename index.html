@@ -6,65 +6,60 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <link rel="shortcut icon" href="images/favicon.png"/>
-    <script>
-    function moveRect(e){
-        switch(e.keyCode){   
-            case 113:  // если нажата клавиша F2
-                toClipBoard('one', 'two');
-                break;
-            case 27:   // если нажата клавиша ESC
-            swapAreas();
-            break;
-        }
-    }
-    addEventListener("keyup", moveRect);
-    </script>
-    <script type="text/javascript">
-    </script>
 </head>
 <body>
+    <!-- ШАПКА -->
     <header>
-        <div class="head1">
-            <img id="logo" src="images\logo.png" class="logo" onclick="changeTheme()">
+        <!-- Блок с логотипом и названием -->
+        <div class="logoname">
+            <img class="logo" src="images\logo.png" onclick="changeTheme()">
             <h1 class="name">Taygeta</h1>
         </div>
-        <div class="head2">
-            <button class="lbutton" onclick="chKeys()">
-                <span class="btntext">Keys</span>
+        <!-- Блок с главными кнопками -->
+        <div class="mainbuttons">
+            <!-- Кнопка смены кода шифрования -->
+            <button class="button-key" onclick="chKeys()">
+                Keys (F8)
             </button>
-            <button class="rbutton" onclick="toClipBoard()">
-                <span class="btntext">Copy</span>
+            <!-- Кнопка копирования перевода -->
+            <button class="button-clipboard" onclick="toClipBoard()">
+                Copy (F2)
             </button>
         </div>
     </header>
-    <div>
-        <div class="body1">
+
+    <!-- ОСНОВНАЯ ЧАСТЬ -->
+    <main>
+        <!-- Блок с названиями текстовых полей -->
+        <div class="textareas-titles">
             <h2 class="areaTitle1">Plain text</h2>
-            <img src="images\change.png" class="changebutton" onclick="swapAreas()">
+            <img src="images\change.png" class="button-swapareas" title="ESC" onclick="swapAreas()">
             <h2 class="areaTitle2">Encrypted text</h2>
         </div>
-        <form class="body2">
-            <textarea class="leftarea" id="uncrypted" oninput="Crypt()"></textarea>
-            <textarea placeholder="Translation" disabled="disabled" class="rightarea" id="crypted"></textarea>
+        <!-- Блок с текстовыми полями -->
+        <form class="textareas">
+            <textarea class="textarea-left" id="uncrypted" oninput="Crypt()"></textarea>
+            <textarea class="textarea-right" id="crypted" placeholder="Translation" disabled="disabled"></textarea>
         </form>
+    </main>
 
-    </div>
-      <audio id="audiosuccesful" src="sounds\beep01.mp3"></audio>
-      <a class = "hintright" href="https://vk.com/jamesforelock" target="_blank">Write to the developer</a>
-      <span class = "hint">F2 - Copy, ESC - Invert, F8 - Keys</span>
-      <br>
-      <span class = "hint">Your key: </span>
-      <br>
-      <span class = "hint" id = 'key'> </span>
-      <br>
-      <span class = "hint">Version: 2.0</span>
-
-      <script>
-        var input = document.getElementById('uncrypted');
-        input.focus();
-      </script>
-      <div style="padding-bottom: 33%"></div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-      <script async src="scripts/main.js"></script>
+    <!-- Звук копирования текста   -->
+    <audio id="sound-success" src="sounds\beep01.mp3"></audio>
+     
+    <!-- ПОДВАЛ -->
+    <footer>
+        <!-- Ссылка на страницу разработчика в VK -->
+        <a class="link-developer" href="https://vk.com/jamesforelock" target="_blank">Write to the developer</a>
+            <ul class="hints">
+                <!-- Подсказки горячих клавиш -->
+                <li>Your key: <span id='key'></span></li>
+                <li>Version: 2.1</li>
+            </ul>
+    </footer>
+      
+    <!-- ПОДКЛЮЧЕНИЕ JS ФАЙЛОВ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    </script>
+    <script async src="scripts/main.js"></script>
 </body>
 </html>

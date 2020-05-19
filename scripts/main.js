@@ -1,11 +1,15 @@
 "use strict";
 var userString; // Пользовательская строка
 var resultString; // Результирующая строка
-var isToCrypt = 0;
-var isDark = localStorage.getItem('isDark');
+var isToCrypt = 0; // Переключатель для функции смены текстовых полей
 
+var input = document.getElementById('uncrypted');
+input.focus();
+
+// Получение данных с локального хранилища об установленной цветовой теме
+var isDark = localStorage.getItem('isDark'); 
 if(isDark == 1){
-    $('link[href="styles/main.css"]').attr('href', 'styles/mainnight.css');
+    $("head").append($("<link rel='stylesheet' href='styles/darktheme.css'"+" -style.css' type='text/css' media='screen'/>"));
 }
 
 //======================= МАССИВЫ СИМВОЛОВ ==========================
@@ -125,9 +129,9 @@ function Uncrypt(){
 
 // Функция копирования зашифрованного сообщения в буфер обмена
 function toClipBoard(){
-    var string = document.getElementsByClassName('rightarea')[0].value;
-    var suc = document.getElementById("audiosuccesful");
-    var unsuc = document.getElementById("audiounsuccesful");
+    var string = document.getElementsByClassName('textarea-right')[0].value;
+    var suc = document.getElementById("sound-success");
+    var unsuc = document.getElementById("sound-success");
     navigator.clipboard.writeText(string)
   .then(() => {
         suc.play();
@@ -164,6 +168,16 @@ function chKeys(){
         alert('The code is in the wrong format!')
         move = document.getElementById('key').innerHTML;
     }
+    else if(isNaN(move)){
+        if(move == "iamaball") {
+            move = document.getElementById('key').innerHTML;
+            funWithJacque();
+        }
+        else{
+            alert('The code is in the wrong format!')
+            move = document.getElementById('key').innerHTML;
+        }
+    }
     else{
         Reset();
         SpliceArrays(move);
@@ -172,46 +186,78 @@ function chKeys(){
     }
 }
 
-// Функция обработки нажатия клавиши F8 для вызова функции ввода кода шифрования
+// Функция обработки нажатия клавиши для вызова соответсвующих им функций
 function moveRect(e){
     switch(e.keyCode){
         case 119:  // если нажата клавиша F8
             chKeys();
             break;
-    
+        case 113:  // если нажата клавиша F2
+            toClipBoard('one', 'two');
+            break;
+        case 27:   // если нажата клавиша ESC
+            swapAreas();
+            break;
     }
 }
- addEventListener("keyup", moveRect); // Добавление прослушивания нажатия клавиши F8
+addEventListener("keyup", moveRect); // Добавление прослушивания нажатия клавиш
 
-// ИЗМЕНЕНИЯ ОТ 16.05.2020
-function changeTheme(){ // Функция смены цветовой темы интерфейса
+// Функция смены цветовой темы интерфейса
+function changeTheme(){ 
     if(localStorage.getItem('isDark') == 0){
-        $('link[href="styles/main.css"]').attr('href', 'styles/mainnight.css');
+        // Подключение темной темы
+        $("head").append($("<link rel='stylesheet' href='styles/darktheme.css'"+" -style.css' type='text/css' media='screen'/>"));
         localStorage.setItem('isDark', 1); 
     }
     else{
-        $('link[href="styles/mainnight.css"]').attr('href', 'styles/main.css');
+        // Удаление темной темы
+        $('link[href="styles/darktheme.css"]').remove();
         localStorage.setItem('isDark', 0); 
     }
 }
 
-function swapAreas(){
+// Функция смены текстовых полей
+function swapAreas(){ 
     if(isToCrypt == 0){
         document.getElementById('crypted').innerHTML = "";
         $(".areaTitle1").html("Encrypted text");
         $(".areaTitle2").html("Plain text");
-        $(".leftarea").attr({"oninput":"Uncrypt()", "id":"crypted"});
-        $(".rightarea").attr({"id":"uncrypted"});
-        $(".leftarea").val("");
+        $(".textarea-left").attr({"oninput":"Uncrypt()", "id":"crypted"});
+        $(".textarea-right").attr({"id":"uncrypted"});
+        $(".textarea-left").val("");
         isToCrypt = 1;
     }
     else{
         document.getElementById('uncrypted').innerHTML = "";
         $(".areaTitle1").html("Plain text");
         $(".areaTitle2").html("Encrypted text");
-        $(".leftarea").attr({"oninput":"Crypt()", "id":"uncrypted"});
-        $(".rightarea").attr({"id":"crypted"});
-        $(".leftarea").val("");
+        $(".textarea-left").attr({"oninput":"Crypt()", "id":"uncrypted"});
+        $(".textarea-right").attr({"id":"crypted"});
+        $(".textarea-left").val("");
         isToCrypt = 0;
     }
+}
+
+// Функция для установки ожидания в миллисекундах
+function sleep(ms) { 
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Функция-пасхалка
+async function funWithJacque(){
+    await sleep(2000);
+    $(".textarea-left").css({"background": "url(images/backEmpty.jpg", "background-size": "100%",
+   "background-repeat": "no-repeat", "opacity": "0.0", "color":"black"});
+    for(var i = 0.0; i<=1; i = i + 0.1){
+        await sleep(80);
+        $(".textarea-left").css({"opacity": String(i)});
+    }
+    await sleep(2000);
+    $(".textarea-left").css({"background": "url(images/backHello.jpg", "background-size": "100%",
+   "background-repeat": "no-repeat"});
+    await sleep(3000);
+    $(".textarea-left").css({"background": "url(images/back.jpg", "background-size": "100%",
+   "background-repeat": "no-repeat", "text-indent": "10%", "padding-bottom": "14%",
+    "padding-top": "6.15%"});
+    
 }
