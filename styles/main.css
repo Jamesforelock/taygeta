@@ -17,6 +17,7 @@ body{
     margin: 0;
     font-family: SFProDisplay, 'Arial', cursive;
     cursor: url(cur/Arrow.cur), default; 
+    transition: background-color 0.5s linear;
 }
 button{
     width: 150px;
@@ -41,6 +42,7 @@ footer{
 .logoname{
     height: 70px;
     padding-top: 10px;
+    transition: background-color 0.5s linear;
 }
 .logo{
     fill: darkorchid;
@@ -160,6 +162,7 @@ footer{
     cursor: url(cur/IBeam.cur), text;
     width: 50%;
     padding-bottom: 20%;
+    transition: background-color 0.5s linear;
     resize: none;
     font-family: SFProDisplay, 'Comic Sans MS', cursive;
     font-weight: normal;
@@ -176,6 +179,7 @@ footer{
     width: 50%;
     padding-bottom: 20.12%;
     background-color: rgb(242, 242, 242);
+    transition: background-color 0.5s linear;
     font-weight: normal;
     resize: none;
     font-family: SFProDisplay, 'Comic Sans MS', cursive;
@@ -222,6 +226,7 @@ body{
     margin: 0;
     font-family: SFProDisplay, 'Arial', cursive;
     cursor: url(cur/Arrow.cur), default;
+    transition: background-color 0.5s linear;
 }
 button{
     background-color: white;
@@ -236,6 +241,7 @@ button:focus{
 /* Блок с логотипом и названием */
 .logoname{
     padding-bottom: 5px;
+    transition: background-color 0.5s linear;
 }
 .logo{
     fill: darkorchid;
@@ -349,6 +355,7 @@ button:focus{
     border-radius: 10px;
     margin: 0 auto;
     display: block;
+    transition: background-color 0.5s linear;
 }
 .textarea-left:focus{
     outline: none;
@@ -366,6 +373,7 @@ button:focus{
     display: block;
     margin-top: 5%;
     border-radius: 10px;
+    transition: background-color 0.5s linear;
 }
 
 /* ================================ ПОДВАЛ ================================ */
