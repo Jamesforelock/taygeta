@@ -8,55 +8,99 @@
     <link rel="shortcut icon" href="images/favicon.png"/>
 </head>
 <body>
-    <!-- ШАПКА -->
-    <header>
-        <!-- Блок с логотипом и названием -->
-        <div class="logoname">
-            <img class="logo" src="images\logo.png" onclick="changeTheme()">
-            <h1 class="name">Taygeta</h1>
-        </div>
-        <!-- Блок с главными кнопками -->
-        <div class="mainbuttons">
-            <!-- Кнопка смены кода шифрования -->
-            <button class="button-key" onclick="chKeys()">
-                Keys (F8)
-            </button>
-            <!-- Кнопка копирования перевода -->
-            <button class="button-clipboard" onclick="toClipBoard()">
-                Copy (F2)
-            </button>
-        </div>
-    </header>
+    <svg style="display: none">
+        <symbol id="logo-1" viewBox="0 0 640 640">
+            <g>
+                <path d="M525 325C525 435.39 435.38 525 325 525C214.62 525 125 435.39 125 325C125 214.62 214.62 125 325 125C435.38 125 525 214.62 525 325Z" id="b8kWL54yvE"></path>
+            </g>
+        </symbol>
+        <symbol id="logo-2" viewBox="0 0 640 640">
+            <g>
+                <path d="M348.5 66L372 118L325 118L278 118L301.5 66L325 14L348.5 66Z" id="dQ9Q7gJOw"></path>
+            </g>
+        </symbol>
+        <symbol id="logo-3" viewBox="0 0 640 640">
+            <g>
+                <path d="M111.36 487.17L138.29 439.33L163.81 470.94L189.32 502.55L136.88 518.78L84.43 535L111.36 487.17Z" id="ec1oPqIgg"></path>
+            </g>
+        </symbol>
+        <symbol id="logo-4" viewBox="0 0 640 640">
+            <g>
+                <path d="M540.51 487.17L513.58 439.33L488.07 470.94L462.56 502.55L515 518.78L567.44 535L540.51 487.17Z" id="acZuc83Qq"></path>
+            </g>
+        </symbol>
 
-    <!-- ОСНОВНАЯ ЧАСТЬ -->
-    <main>
-        <!-- Блок с названиями текстовых полей -->
-        <div class="textareas-titles">
-            <h2 class="areaTitle1">Plain text</h2>
-            <img src="images\change.png" class="button-swapareas" title="ESC" onclick="swapAreas()">
-            <h2 class="areaTitle2">Encrypted text</h2>
-        </div>
-        <!-- Блок с текстовыми полями -->
-        <form class="textareas">
-            <textarea class="textarea-left" id="uncrypted" oninput="Crypt()"></textarea>
-            <textarea class="textarea-right" id="crypted" placeholder="Translation" disabled="disabled"></textarea>
-        </form>
-    </main>
+        <symbol id="arrow-1" viewBox="0 0 640 640">
+            <g>
+                <path d="M343.23 252.02L577.29 184.52L343.23 117.02L343.23 159.82L95 159.82L95 209.34L343.23 209.34L343.23 252.02Z" id="fInNzhSZG"></path>
+            </g>
+        </symbol>
+        <symbol id="arrow-2" viewBox="0 0 640 640">
+            <g>
+                <path d="M329.06 471.02L95 403.52L329.06 336.02L329.06 378.82L577.29 378.82L577.29 428.34L329.06 428.34L329.06 471.02Z" id="a32Wcls0n"></path>
+            </g>
+        </symbol>
+    </svg>    
 
-    <!-- Звук копирования текста   -->
+    <div class="container">
+         <!-- ШАПКА -->
+        <header class="header">
+            <!-- Блок с логотипом и названием -->
+            <div class="logoname">
+                <svg class="logo" onclick="changeTheme()">
+                    <use xlink:href="#logo-1" fill-opacity="0" stroke-width="51" stroke-opacity="1"></use>
+                    <use xlink:href="#logo-2" opacity="1" fill-opacity="1"></use>
+                    <use xlink:href="#logo-3" opacity="1" fill-opacity="1"></use>
+                    <use xlink:href="#logo-4" opacity="1" fill-opacity="1"></use>
+                </svg>
+                <h1 class="name">Taygeta</h1>
+            </div>
+            <!-- Блок с главными кнопками -->
+            <div class="mainbuttons">
+                <!-- Кнопка смены кода шифрования -->
+                <button class="button-key" onclick="chKeys()">
+                    Keys (F8)
+                </button>
+                <!-- Кнопка копирования перевода -->
+                <button class="button-clipboard" onclick="toClipBoard()">
+                    Copy (F2)
+                </button>
+            </div>
+        </header>
+
+         <!-- ОСНОВНАЯ ЧАСТЬ -->
+        <main class="main">
+            <!-- Блок с названиями текстовых полей -->
+            <div class="textareas-titles">
+                <h2 class="areaTitle1">Plain text</h2>
+                <svg class="button-swapareas" title="ESC" onclick="swapAreas()">
+                    <use xlink:href="#arrow-1"></use>
+                    <use xlink:href="#arrow-2"></use>
+                </svg>
+                <h2 class="areaTitle2">Encrypted text</h2>
+            </div>
+            <!-- Блок с текстовыми полями -->
+            <form class="textareas">
+                <textarea class="textarea-left" id="uncrypted" oninput="Crypt()"></textarea>
+                <textarea class="textarea-right" id="crypted" placeholder="Translation" disabled="disabled"></textarea>
+            </form>
+        </main>
+
+        <!-- Звук копирования текста   -->
     <audio id="sound-success" src="sounds\beep01.mp3"></audio>
-     
-    <!-- ПОДВАЛ -->
-    <footer>
-        <!-- Ссылка на страницу разработчика в VK -->
-        <a class="link-developer" href="https://vk.com/jamesforelock" target="_blank">Write to the developer</a>
+
+        <!-- ПОДВАЛ -->
+        <footer class="footer">
+            <!-- Ссылка на страницу разработчика в VK -->
             <ul class="hints">
                 <!-- Подсказки горячих клавиш -->
                 <li>Your key: <span id='key'></span></li>
-                <li>Version: 2.1</li>
+                <li>Version: 2.2</li>
             </ul>
-    </footer>
-      
+            <a class="link-developer" href="https://vk.com/jamesforelock" target="_blank">Write to the developer</a>     
+        </footer>
+    </div>
+    
     <!-- ПОДКЛЮЧЕНИЕ JS ФАЙЛОВ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
     </script>

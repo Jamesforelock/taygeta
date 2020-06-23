@@ -10,17 +10,25 @@ button{
     background: rgb(50,54,57);
 }
 /* ================================ ШАПКА ================================ */
+.logo{
+    fill: rgb(186, 115, 221);
+    stroke: rgb(186, 115, 221);
+}
+.logo:hover{
+    fill: rgba(232,234,237, 0.3);
+    stroke: rgb(232,234,237);
+}
 .logoname{
     background: rgb(50,54,57);
 }
 .mainbuttons{
     border: 1px solid rgb(40, 44, 47);
-    box-shadow: inset 0 -2px 0 rgba(100,100,100,0.1);
+    box-shadow: inset 0 -0.5px 0 rgba(100,100,100,0.1);
     background: rgb(50,54,57);
 }
 .button-key{
     color: rgb(186, 115, 221);
-    border: 1px solid  rgb(212, 212, 212);
+    border: 1px solid rgb(40, 44, 47);
 }
 .button-key:hover{
     color: white;
@@ -29,7 +37,7 @@ button{
 }
 .button-clipboard{
     color: rgb(232,234,237);
-    border: 1px solid  rgb(212, 212, 212);
+    border: 1px solid rgb(40, 44, 47);
 }
 .button-clipboard:hover{
     color: white;
@@ -37,11 +45,21 @@ button{
     border: 1px solid rgb(112, 112, 112);
 }
 /* ================================ ОСНОВНАЯ ЧАСТЬ ================================ */
+.main {
+    border: 1px solid rgb(40, 44, 47);
+}
+.button-swapareas{
+    fill: rgb(232,234,237);
+}
+.button-swapareas:hover{
+    fill: rgb(186, 115, 221);
+    stroke: rgb(186, 115, 221);
+}
 .areaTitle1{
     color: rgb(186, 115, 221);
 }
 .textarea-left{
-    border: 1px solid rgb(112, 112, 112);
+    border: 1px solid rgb(40, 44, 47);
     border-top: 3px solid rgb(186, 115, 221);
     box-shadow: 0 3px 0 rgba(50,50,50,0.1);
     background: rgb(50,54,57);
@@ -51,7 +69,7 @@ button{
     outline: 1px solid rgb(186, 115, 221);
 }
 .textarea-right{
-    border: 1px solid rgb(112, 112, 112);
+    border: 1px solid rgb(40, 44, 47);
     box-shadow: 0 3px 0 rgba(50,50,50,0.1);
     background: rgb(60,64,67);
     color:white;
@@ -85,6 +103,14 @@ button{
     background: rgb(50,54,57);
 }
 /* ================================ ШАПКА ================================ */
+.logo{
+    fill: rgb(186, 115, 221);
+    stroke: rgb(186, 115, 221);
+}
+.logo:hover{
+    fill: rgba(232,234,237, 0.3);
+    stroke: rgb(232,234,237);
+}
 .logoname{
     background: rgb(50,54,57);
 }
@@ -93,7 +119,7 @@ button{
 }
 .button-key{
     color: rgb(186, 115, 221);
-    border: 1px solid  rgb(212, 212, 212);
+    border: 1px solid rgb(40, 44, 47);
 }
 .button-key:hover{
     color: white;
@@ -102,7 +128,7 @@ button{
 }
 .button-clipboard{
     color: rgb(232,234,237);
-    border: 1px solid  rgb(212, 212, 212);
+    border: 1px solid rgb(40, 44, 47);
 }
 .button-clipboard:hover{
     color: white;
@@ -110,6 +136,12 @@ button{
     border: 1px solid rgb(112, 112, 112);
 }
 /* ================================ ОСНОВНАЯ ЧАСТЬ ================================ */
+.button-swapareas{
+    fill: rgb(232,234,237);
+}
+.button-swapareas:hover{
+    fill: rgb(186, 115, 221);
+}
 .areaTitle1{
     color: rgb(186, 115, 221);
 }
@@ -141,6 +173,5 @@ button{
 .hints{
     list-style-type: none;
     color: rgb(90,90,90);
-}
 }
 }

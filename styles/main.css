@@ -33,18 +33,33 @@ footer{
 }
 
 /* ================================ ШАПКА ================================ */
+.header {
+    width: 100%;
+    max-width: 1280px;
+}
 /* Блок с логотипом и названием */
 .logoname{
     height: 70px;
     padding-top: 10px;
 }
 .logo{
+    fill: darkorchid;
+    stroke: darkorchid;
     width: 40px;
     height: 40px;
     margin-left: 25px;
+    margin-top: 10px;
     display: inline-block;
     vertical-align: middle;
     cursor: url(cur/Hand.cur), pointer;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition:  stroke, fill, transform 1s ease-in-out;
+}
+.logo:hover {
+    fill: rgba(80, 80, 80, 0.3);
+    stroke: rgba(80, 80, 80);
+    -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 .name{
     margin: 0;
@@ -57,18 +72,20 @@ footer{
 
 /* Блок с главными кнопками */
 .mainbuttons{
+    display:flex;
     background-color: rgb(250, 250, 250);
     border: 1px solid  rgb(212, 212, 212);
     height: 70px;
-    box-shadow: inset 0 -2px 0 rgba(100,100,100,0.1);
+    box-shadow: inset 0 -0.5px 0 rgba(100,100,100,0.1);
+    justify-content: space-between;
 }
 .button-key{
     color: darkorchid;
     font-size: 20px;
     margin-top: 15px;
-    margin-left: 20px;
     border: 1px solid rgb(212, 212, 212);
     cursor: url(cur/Hand.cur), pointer;
+    margin-left: 30px;
 }
 .button-key:hover{
     color: white;
@@ -80,10 +97,9 @@ footer{
     font-size: 20px;
     color: rgb(80, 80, 80);
     margin-top: 15px;
-    float:right;
-    margin-right: 20px;
     border: 1px solid rgb(212, 212, 212);
     cursor: url(cur/Hand.cur), pointer;
+    margin-right: 30px;
 }
 
 .button-clipboard:hover{
@@ -93,41 +109,52 @@ footer{
     transition: 0.5s;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* ================================ ОСНОВНАЯ ЧАСТЬ ================================ */
+.main {
+    width: 100%;
+    max-width: 1280px;
+    border: 1px solid  rgb(212, 212, 212);
+}
 /* Блок с названиями текстовых полей */
 .textareas-titles{
     height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .areaTitle1{
-    width: 48%;
+    width: 50%;
     font-weight: normal;
     color: darkorchid;
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
 }
 .button-swapareas{
-    width: 3%;
-    max-width: 55px;
-    min-width: 30px;
-    height: 50%;
+    fill: rgb(112, 112, 112);
+    transition: fill 0.3s linear;
     cursor: url(cur/Hand.cur), pointer;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 auto;
+    width: 50px;
+}
+.button-swapareas:hover{
+    fill: darkorchid;
 }
 .areaTitle2{
-    width: 45%;
+    width: 50%;
     font-weight: normal;
     text-align: center;
-    display: inline-block;
-    vertical-align: middle;
 }
 /* Блок с текстовыми полями */
 .textareas{
     width: 100%;
     height: 70%;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 .textarea-left{
     cursor: url(cur/IBeam.cur), text;
@@ -149,7 +176,6 @@ footer{
     width: 50%;
     padding-bottom: 20.12%;
     background-color: rgb(242, 242, 242);
-    float: right;
     font-weight: normal;
     resize: none;
     font-family: SFProDisplay, 'Comic Sans MS', cursive;
@@ -157,12 +183,19 @@ footer{
     border: 1px solid rgb(212, 212, 212);
     box-shadow: 0 3px 0 rgba(50,50,50,0.1);
     display: inline-block;
+    cursor: url(cur/Arrow.cur), default; 
 }
 
 /* ================================ ПОДВАЛ ================================ */
+.footer {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .link-developer{
     cursor: url(cur/Hand.cur), pointer;
-    float: right;
     margin-right: 40px;
     text-decoration: none;
     color: rgb(180,180,180);
@@ -205,6 +238,9 @@ button:focus{
     padding-bottom: 5px;
 }
 .logo{
+    fill: darkorchid;
+    stroke: darkorchid;
+    transition: stroke, fill 1s linear;
     width: 60px;
     height: 60px;
     margin: 0 auto;
@@ -212,6 +248,14 @@ button:focus{
     margin-top:2%;
     border: none;
     cursor: url(cur/Hand.cur), pointer;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition:  stroke, fill, transform 1s ease-in-out;
+}
+.logo:hover {
+    fill: rgba(80, 80, 80, 0.3);
+    stroke: rgba(80, 80, 80);
+    -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 .name{
     display: none;
@@ -255,12 +299,17 @@ button:focus{
     transition: 0.5s;
 }
 .button-swapareas{
+    fill: rgb(112, 112, 112);
+    transition: fill 0.3s linear;
     margin: 0 auto;
     display: block;
     margin-top: 3%;
     width: 45px;
     height: 45px;
     cursor: url(cur/Hand.cur), pointer;
+}
+.button-swapareas:hover{
+    fill: darkorchid;
 }
 
 /* ================================ ОСНОВНАЯ ЧАСТЬ ================================ */
