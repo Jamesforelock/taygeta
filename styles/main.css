@@ -154,14 +154,14 @@ footer{
 /* Блок с текстовыми полями */
 .textareas{
     width: 100%;
-    height: 70%;
+    height: 450px;
     display: flex;
     justify-content: center;
 }
 .textarea-left{
     cursor: url(cur/IBeam.cur), text;
     width: 50%;
-    padding-bottom: 20%;
+    height: 100%;
     transition: background-color 0.5s linear;
     resize: none;
     font-family: SFProDisplay, 'Comic Sans MS', cursive;
@@ -177,7 +177,7 @@ footer{
 }
 .textarea-right{
     width: 50%;
-    padding-bottom: 20.12%;
+    height: 100%;
     background-color: rgb(242, 242, 242);
     transition: background-color 0.5s linear;
     font-weight: normal;
