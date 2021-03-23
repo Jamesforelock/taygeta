@@ -8,7 +8,7 @@ input.focus();
 
 // Получение данных с локального хранилища об установленной цветовой теме
 var isDark = localStorage.getItem('isDark'); 
-if(isDark == 1 || !isDark){
+if(isDark == 1){
     $("head").append($("<link rel='stylesheet' href='styles/darktheme.css'"+" -style.css' type='text/css' media='screen'/>"));
 }
 
@@ -204,7 +204,7 @@ addEventListener("keyup", moveRect); // Добавление прослушив�
 
 // Функция смены цветовой темы интерфейса
 function changeTheme(){ 
-    if(localStorage.getItem('isDark') == 0){
+    if(localStorage.getItem('isDark') == 0 || !localStorage.getItem('isDark')){
         // Подключение темной темы
         $("head").append($("<link rel='stylesheet' href='styles/darktheme.css'"+" -style.css' type='text/css' media='screen'/>"));
         localStorage.setItem('isDark', 1); 
