@@ -8,7 +8,7 @@ input.focus();
 
 // Получение данных с локального хранилища об установленной цветовой теме
 var isDark = localStorage.getItem('isDark'); 
-if(isDark == 1){
+if(isDark == 1 || !isDark){
     $("head").append($("<link rel='stylesheet' href='styles/darktheme.css'"+" -style.css' type='text/css' media='screen'/>"));
 }
 
